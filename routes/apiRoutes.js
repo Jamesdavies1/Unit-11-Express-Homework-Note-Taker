@@ -9,10 +9,12 @@ module.exports = function(app) {
   //post req
   app.post("/api/notes", function(req, res) {
     notesData.push(req.body);
+    res.json(true);
   });
 
   //del req
   app.post("/api/clear", function(req, res) {
     notesData.length = 0;
+    res.json({ ok: true });
   });
 };
