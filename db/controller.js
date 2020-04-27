@@ -1,4 +1,3 @@
-// import notesArray from "./notesDB";
 const fs = require("fs");
 const path = require("path");
 const uuidv1 = require("uuid").v1;
