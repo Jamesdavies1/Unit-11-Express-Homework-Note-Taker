@@ -14,7 +14,14 @@ const writeToDB = note => {
   return true;
 };
 
-const deleteNote = id => {};
+const deleteNote = noteID => {
+  const availableNotes = getNotes();
+
+  const filteredNotes = availableNotes.filter(({ id }) => id !== noteID);
+
+  writeToDB(filteredNotes);
+  return;
+};
 
 const addNote = (title, text) => {
   const existingNotes = getNotes();
@@ -32,5 +39,6 @@ const getNotes = () => {
 
 module.exports = {
   addNote,
-  getNotes
+  getNotes,
+  deleteNote
 };
