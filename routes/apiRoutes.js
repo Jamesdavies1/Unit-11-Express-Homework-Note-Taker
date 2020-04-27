@@ -19,14 +19,4 @@ module.exports = function(app) {
 
     return res.status(200).send();
   });
-
-  //   app.post("/api/notes", function(req, res) {
-  //     notesData.push(req.body);
-  //     res.json(true);
-  //   });
-
-  //   app.post("/api/clear", function(req, res) {
-  //     notesData.length = 0;
-  //     res.json({ ok: true });
-  //   });
 };
