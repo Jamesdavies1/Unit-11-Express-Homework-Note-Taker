@@ -1,4 +1,3 @@
-const addNoteToJson = require("../db/controller");
 const { addNote, getNotes, deleteNote } = require("../db/controller");
 
 module.exports = function(app) {
@@ -15,7 +14,11 @@ module.exports = function(app) {
     return res.json(createdPost);
   });
 
-  app.delete("/api/notes:id", function(req, res) {});
+  app.delete("/api/notes/:id", function(req, res) {
+    deleteNote(req.params.id);
+
+    return res.status(200).send();
+  });
 
   //   app.post("/api/notes", function(req, res) {
   //     notesData.push(req.body);
